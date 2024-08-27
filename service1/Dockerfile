@@ -1,6 +1,8 @@
 FROM python:3.8-slim
 WORKDIR /code
 
+RUN mkdir -p /var/log/service1
+
 COPY requirements.txt /code/requirements.txt
 
 RUN apt-get update \
