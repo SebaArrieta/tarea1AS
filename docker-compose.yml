@@ -9,6 +9,8 @@ services:
       - "8000:8000"
     networks:
       - app-network
+    volumes:
+      - ./service1/logs:/var/log/service1
 
   service2:
     build:
@@ -18,37 +20,39 @@ services:
       - "8001:8001"
     networks:
       - app-network
-  
+    volumes:
+      - ./service2/logs:/var/log/service2
+
   loki:
-    image: grafana/loki:2.9.0
-    container_name: loki
+    image: grafana/loki:latest
     ports:
       - "3100:3100"
-    command: -config.file=/etc/loki/local-config.yaml
     volumes:
-      - ./loki/loki-config.yml:/etc/loki/local-config.yaml
-
+      - ./loki/loki-config.yml:/etc/loki/loki-config.yaml
+    command: -config.file=/etc/loki/loki-config.yaml
+    networks:
+      - loki
   promtail:
-    image: grafana/promtail:2.9.0
-    container_name: promtail
+    image: grafana/promtail:latest
     volumes:
-      - ./promtail/promtail-config.yml:/etc/promtail/config.yml
-      - ./logs:/var/log
-    command: -config.file=/etc/promtail/config.yml
-
+      - ./promtail/promtail-config.yml:/etc/promtail/promtail-config.yaml
+      - ./service2/logs:/var/log/service2
+      - ./service1/logs:/var/log/service1
+    command: -config.file=/etc/promtail/promtail-config.yaml
+    depends_on:
+      - loki   
+    networks:
+      - loki
   grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
+    image: grafana/grafana
     ports:
-      - "3000:3000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    volumes:
-      - grafana-storage:/var/lib/grafana
+      - 3000:3000
+    networks:
+      - loki
 
-volumes:
-  grafana-storage:
 
 networks:
+  loki:
+    driver: bridge
   app-network:
     driver: bridge
