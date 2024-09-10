@@ -25,7 +25,7 @@ parezca a uno hecho en papel.
 
 **Organización:** Aspectos relacionados con el desarrollo propio del código fue manejado por Diego Acevedo en su totalidad, mientras que el manejo con github, el proceso de registro de pruebas y otros apartados fueron abordados por Sebastián Arrieta.
 
-#Incluir evidencia de flujo de trabajo y configuraciones realizadas (Imágenes de pantalla)
+# Incluir evidencia de flujo de trabajo y configuraciones realizadas (Imágenes de pantalla)
 
 ## GitFlow
 ![image](https://github.com/user-attachments/assets/8c8c9823-2852-47f9-af34-31cc15053529)
