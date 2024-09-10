@@ -4,8 +4,11 @@ Para la correcta ejecucion del codigo es necesario tener maven instalado y Java 
 sudo apt update
 sudo apt install maven
 
-El código posee un makefile y ejecutando el siguiente formato es posible correr  el codigo
+El código posee un makefile y ejecutando el siguiente formato es posible correr  el codigo\n
 **make run**
+
+De igual forma para la ejecución de las pruebas utilizar el siguiente comando
+**make test**
 
 #¿Cómo especificarías mejor el requerimiento? (Validación)
 
@@ -43,6 +46,10 @@ Otro problema relacionado iba en torno a como mostrar la imagen de forma clara c
 El problema es que si mostrabamos un calendario por consola, se volvería tedioso de ver tras cada pequeña acción. Fue por esto que para poder cumplir con el requerimiento de la forma más eficiente que se nos ocurrió, 
 es que decidimos simplificar la lógica a un tablero por día de la semana, y agregar la fecha en el detalle de cada lunes. De este modo, todas las tareas asignadas a un día lunes (ya sea lunes 8 o lunes 15), se visualizan en el mismo lugar, 
 pudiendo ser diferenciadas en detalle gracias a las fechas especificas.
+
+## Contribuir
+
+Para contribuir con este proyecto se podran realizar Pull Request a la rama develop para que estos queden registrados
 
 ## License
 
