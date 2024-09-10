@@ -1,3 +1,4 @@
+# Ejecución
 Para la correcta ejecucion del codigo es necesario tener maven instalado y Java 17
 *Instalación de Maven en linux*
 sudo apt update
@@ -6,17 +7,22 @@ sudo apt install maven
 El código posee un makefile y ejecutando el siguiente formato es posible correr  el codigo
 **make run**
 
+# Preguntas
+¿Cómo especificarías mejor el requerimiento? (Validación)
 **Requerimiento:** Asegurar que la aplicación para la gestión de tareas sea intuitiva de usar y fácilmente comprensible para el usuario final, verificando que la interfaz y las funcionalidades respondan adecuadamente a las expectativas del cliente en términos de 
 facilidad de aprendizaje, navegación clara y experiencia de usuario positiva.
 
+¿Cómo asegurarías que el programa cumpla el requerimiento? (Verificación)
 **Cumplir Requerimiento:** Esto puede ser un reto ya que ni el cliente mismo sabe explicar bien su requerimiento y lo que considera como un gestionador de tareas sencillo. A pesar de esa complicación, considero que una buena forma de abordarlo sería poniendo 
 especial enfásis en que cada una de las acciones sea entendible con solo leerla. Y ya que nos limitamos a solo trabajar con la consola, la mejor forma sería generando instrucciones autoexplicativas y procurar dar algo de estética al sistema de tal forma que se 
 parezca a uno hecho en papel.
 
+Organización, explicar cómo se organizó el proyecto y el flujo de trabajo de éste.
 **Organización:** Aspectos relacionados con el desarrollo propio del código fue manejado por Diego Acevedo en su totalidad, mientras que el manejo con github, el proceso de registro de pruebas y otros apartados fueron abordados por Sebastián Arrieta.
 
 **Evidencia:**
 
+Problemas encontrados y como se solucionaron.
 **Problemas encontrados:** Los principales problemas encontrados en el código fueron el como gestionar el traspaso desde una lista semanal a una lista archivada de tal forma que el id se mantuviera y no se generaran duplicados, 
 nos interesaba que el cliente pudiese conseguir lo que pidió sin que las copias pudiesen confundirle.
 
